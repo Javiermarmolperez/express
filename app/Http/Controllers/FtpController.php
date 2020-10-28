@@ -72,33 +72,39 @@ class FtpController extends Controller
 
     public function upload()
     {
-        $files = Storage::disk('sftp')->files('orders');
-        if(!$files) {
+        //recoge los links del ftp carpeta orders
+        $arrayAllOrders = Storage::disk('sftp')->files('orders');
+        if(!$arrayAllOrders) {
             return \response('please provide valid path', 400);
         }
-        foreach ($files as $file){
-            $link=$file;
+        //recorre el array de links y devuelve los links individualmente por string
+        foreach ($arrayAllOrders as $stringOrder)
+        {
+            $stringOrder;
         }
-        $up = Storage::disk('sftp')->get((string)$link);
-        $ufo = json_decode($up);
-        $jsonArray = $ufo->orders;
+        //recoge el archivo del link individual de la orden
+        $contentOrder = Storage::disk('sftp')->get((string)$stringOrder);
+        //transforma el contenido y guarda en un array ($arrayOrder)
+        $contentOrderJson = json_decode($contentOrder);
+        $arrayOrder = $contentOrderJson->orders;
+        //recorre el array del pedido y guarda en variables los datos
+        foreach ($arrayOrder as $order) {
 
-        foreach ($jsonArray as $row) {
-            $id = $row->id;
-            $code = $row->code;
-            $orderDate = $row->orderDate;
-            $observations = $row->observations;
-            $fromApp = $row->fromApp;
-            $statusOrderId = $row->statusOrderId;
-            $deliveryPointId = $row->deliveryPointId;
-            $name = $row->name;
-            $address = $row->address;
-            $phoneNumber = $row->phoneNumber;
-            $orderProducts = json_encode($row->orderProducts);
-            $status = json_encode($row->status);
+            $id = $order->id;
+            $code = $order->code;
+            $orderDate = $order->orderDate;
+            $observations = $order->observations;
+            $fromApp = $order->fromApp;
+            $statusOrderId = $order->statusOrderId;
+            $deliveryPointId = $order->deliveryPointId;
+            $name = $order->name;
+            $address = $order->address;
+            $phoneNumber = $order->phoneNumber;
+            $orderProducts = json_encode($order->orderProducts);
+            $status = json_encode($order->status);
         }
-
-         DB::table('pedidos')->insert([
+        //inserta los valores en los campos correspondientes en la tabla pedidos
+        DB::table('pedidos')->insert([
             'id'=>$id,
             'code'=>$code,
             'orderDate'=>$orderDate,
@@ -112,7 +118,6 @@ class FtpController extends Controller
             'orderProducts'=>$orderProducts,
             'status'=>$status
         ]);
-
 
         return 'subido';
 
