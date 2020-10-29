@@ -44,8 +44,11 @@ Route::get('/ftp', function () {
 Route::get('/ftp/{ftp}', function () {
     return view('ftp.pdf');
 });
+Route::get('/pedidos/{id}', function () {
+    return view('pedidos.pdf');
+});
 
-Route::get('/ ftp/{ftp}', 'FtpController@show')->name('ftp.show');
+Route::get('/ pedidos/{ftp}', 'FtpController@show')->name('ftp.show');
 
 
 Route::resource('/tiendas',TiendaController::class);

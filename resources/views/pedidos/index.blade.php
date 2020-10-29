@@ -21,43 +21,63 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
                             <thead>
-
+                            <th></th>
+                            <th></th>
                             <th>Tienda</th>
-                            <th>Id</th>
                             <th>Code</th>
                             <th>OrderDate</th>
                             <th>Observations</th>
                             <th>fromApp</th>
                             <th>deliveryPointId</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
                             <th>statusOrderId</th>
-                            <th>orderProducts</th>
+                            <th>Ver</th>
+
+                            <th>Quantity</th>
+                            <th>precio</th>
+                            <th>taxPercent</th>
+                            <th>equivalencePercent</th>
+                            <th>tax</th>
+                            <th>equivalence</th>
+                            <th>Subtotal</th>
+                            <th>Total</th>
 
 
                             </thead>
 
                             <tbody>
-                            @forelse($pedidos as $pedido)
+                            @foreach($pedidos as $pedido)
 
-                            <td>{{$tienda}}<td>
+                            <td><td>
+                            <td>{{$pedido->name}}</td>
                             <td>{{$pedido->code}}</td>
                             <td>{{$pedido->orderDate}}</td>
                             <td>{{$pedido->observations}}</td>
                             <td>{{$pedido->fromApp}}</td>
                             <td>{{$pedido->deliveryPointId}}</td>
-                            <td>{{$pedido->status}}</td>
-                            <td>{{$pedido->orderProducts}}</td>
+                            <td>{{$pedido->address}}</td>
+                            <td>{{$pedido->phoneNumber}}</td>
+                            <td>{{$name}}</td>
+                            <td><a href="{{action('FtpController@show',$pedido->id)}}" class="btn-descargar" target="_blank"><i class="fas fa-download"></i><span class="glyphicon glyphicon-eye-open"></span></a></td>
 
+                                @foreach($item as $products)
+                                <td>{{$products->quantity}}</td>
+                                <td>{{$products->price}}</td>
+                                <td>{{$products->taxPercent}}</td>
+                                <td>{{$products->equivalencePercent}}</td>
+                                <td>{{$products->tax}}</td>
+                                <td>{{$products->equivalence}}</td>
+                                <td>{{$products->subTotal}}</td>
+                                <td>{{$products->total}}</td>
+                                @endforeach
 
 
                             </tbody>
+                                @endforeach
 
 
-                            @empty
-                                <div>
-                                    <p>There were no comments available.</p>
-                                </div
 
-                            @endforelse
 
 
 

@@ -11,14 +11,41 @@ class PedidosController extends Controller
     protected function index()
     {
         $pedidos = Pedidos::all();
-        foreach ($pedidos as $pedido) {
-            $id = $pedido->tienda_id;
+
+        $arrayPedidos = [];
+        foreach ($pedidos as $pedido)
+        {
+            //$id = $pedido->tienda_id;
+
+            $status = $pedido->status;
+            $nameStatus = explode('"',$status);
+            $name = $nameStatus[5];
+
+            $allProducts = $pedido->orderProducts;
+            $item = json_decode($allProducts);
+
+            array_push($arrayPedidos,[$name,$item]);
+        }
+        foreach ($arrayPedidos as $arrayPedido)
+        {
+            foreach ($arrayPedido[1] as $pedido)
+            {
+                $producto = $pedido->product;
+                $medida = $pedido->measure;
+
+            }
         }
 
-        $tienda = Tienda::find($id);
 
 
 
-        return view('pedidos.index',compact('pedidos','tienda'));
+        return view('pedidos.index',compact('pedidos','name','item'));
+    }
+
+    public function get_details($id)
+    {
+
+        return view('pedidos.pdf',compact('id'));
+
     }
 }

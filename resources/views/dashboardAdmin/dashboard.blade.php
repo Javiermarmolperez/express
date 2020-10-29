@@ -47,11 +47,11 @@
                             </a>
                             <a class="nav-link" href="/pedidos">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Pedidos
+                                Lista de pedidos
                             </a>
                             <a class="nav-link" href="/ftp">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                FTP
+                                Actualizar pedidos
                             </a>
                         </div>
                     </div>
