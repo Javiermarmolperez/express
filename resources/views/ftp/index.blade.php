@@ -23,7 +23,7 @@
 
                             <list>
                                 <li>
-                                    <a href="{{action('FtpController@show',$file)}}" class="btn-descargar" target="_blank">{{$file}}<i class="fas fa-download"></i><span class="glyphicon glyphicon-eye-open"></span></a>
+                                    <a href="{{action('FtpController@show',$file)}}" class="btn-descargar" target="_blank">{{basename($file)}}<i class="fas fa-download"></i><span class="glyphicon glyphicon-eye-open"></span></a>
                                 </li>
                             </list>
                             @empty

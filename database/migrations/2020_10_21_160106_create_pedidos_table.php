@@ -20,7 +20,7 @@ class CreatePedidosTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('phoneNumber');
-            $table->string('orderProducts');
+            $table->json('orderProducts');
 
             $table->string('status');
 
