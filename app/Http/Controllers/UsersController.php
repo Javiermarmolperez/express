@@ -21,20 +21,6 @@ class UsersController extends Controller
     }
 
 
-    public function update(Request $request, $id)
-    {
-        $this->validate($request,[ 'name'=>'required']);
 
-        $tienda = Tienda::find($id);
-        $tienda->update($request->all());
-
-
-        $courses_ids = $request->courses_id;
-        $tienda->courses()->detach();
-        $tienda->courses()->attach($courses_ids);
-
-        return redirect()->route('tienda.index')->with('success','Registro actualizado satisfactoriamente');
-
-    }
 
 }

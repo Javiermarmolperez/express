@@ -22,9 +22,7 @@ class FtpController extends Controller
          $this->show($arrayAllOrders);
         return view('ftp.index',compact('arrayAllOrders'));
 
-    }Route::get('/pedidos/{id}', function () {
-    return view('pedidos.pdf');
-});
+    }
 
 
     public function show($file)

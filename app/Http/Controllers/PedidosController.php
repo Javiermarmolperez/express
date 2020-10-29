@@ -26,15 +26,7 @@ class PedidosController extends Controller
 
             array_push($arrayPedidos,[$name,$item]);
         }
-        foreach ($arrayPedidos as $arrayPedido)
-        {
-            foreach ($arrayPedido[1] as $pedido)
-            {
-                $producto = $pedido->product;
-                $medida = $pedido->measure;
 
-            }
-        }
 
 
 
@@ -42,10 +34,31 @@ class PedidosController extends Controller
         return view('pedidos.index',compact('pedidos','name','item'));
     }
 
-    public function get_details($id)
+    public function show($id)
     {
 
-        return view('pedidos.pdf',compact('id'));
+            $pedidos=Pedidos::find($id);
+            $allOrdersProducts = json_decode($pedidos->orderProducts);
+
+            $arrayProducts = [];
+
+            foreach ($allOrdersProducts as $ordersProduct)
+            {
+                $producto = $ordersProduct->product;
+                $medida = $ordersProduct->measure;
+
+                array_push($arrayProducts,[$producto,$medida]);
+            }
+
+            foreach ($arrayProducts as $product)
+            {
+                $item = $product[0];
+                $measure = $product[1];
+            }
+
+
+
+        return view('pedidos.pdf',compact('allOrdersProducts','arrayProducts','product','item','measure'));
 
     }
 }

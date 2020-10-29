@@ -41,14 +41,14 @@ Route::get('/users', function () {
 Route::get('/ftp', function () {
     return view('ftp.index');
 });
-Route::get('/ftp/{ftp}', function () {
-    return view('ftp.pdf');
-});
-Route::get('/pedidos/{id}', function () {
-    return view('pedidos.pdf');
-});
 
-Route::get('/ pedidos/{ftp}', 'FtpController@show')->name('ftp.show');
+
+
+
+
+
+Route::get('pedidos/{id}', [PedidosController::class, 'show']);
+
 
 
 Route::resource('/tiendas',TiendaController::class);
