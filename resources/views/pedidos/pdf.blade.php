@@ -17,10 +17,31 @@
                     Detalle pedido
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+
                             @foreach($allOrdersProducts as $pedido)
-                               <thead>
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead class="thead-dark">
+                                <th>Id</th>
+                                <th>Código</th>
+                                <th>Producto</th>
+                                <th>Peso</th>
+
+                                </thead>
+                                <tbody>
+                                @foreach($arrayProducts as $product)
+                                    <tr>
+
+                                        <td>{{$product[0]->id}}</td>
+                                        <td>{{$product[0]->code}}</td>
+                                        <td>{{$product[0]->name}}</td>
+                                        <td>{{$product[1]->id}}{{$product[1]->name}}</td>
+
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                               <thead class="thead-light">
                                 <th>Quantity</th>
                                 <th>precio</th>
                                 <th>taxPercent</th>
@@ -42,21 +63,14 @@
                                 <td>{{$pedido->subTotal}}</td>
                                 <td>{{$pedido->total}}</td>
                             </tbody>
-                            @foreach($arrayProducts as $product)
-                                <tfooter>
 
-                                    <th>{{$product[0]->id}}</th>
-                                    <th>{{$product[0]->code}}</th>
-                                    <th>{{$product[0]->name}}</th>
-                                    <th>{{$product[1]->id}}</th>
-                                    <th>{{$product[1]->name}}</th>
-                                </tfooter>
-                                @endforeach
+                            </table>
+                        </div>
                             @endforeach
 
 
-                        </table>
-                    </div>
+
+
                 </div>
             </div>
 
