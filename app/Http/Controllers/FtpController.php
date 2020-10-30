@@ -51,7 +51,7 @@ class FtpController extends Controller
             $address = $order->address;
             $phoneNumber = $order->phoneNumber;
             $orderProducts = json_encode($order->orderProducts);
-            $status = json_encode($order->status);
+            $status = $order->status->name;
 
             $readtable = DB::table('pedidos')->select('id')->where('id','=',$id)->get();
             $toArray = $readtable->pluck('id');

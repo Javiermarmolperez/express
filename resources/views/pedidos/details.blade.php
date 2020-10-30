@@ -16,6 +16,9 @@
                     <i class="fas fa-table mr-1"></i>
                     Detalle pedido
                 </div>
+                <div>
+
+                </div>
                 <div class="card-body">
 
 
@@ -42,12 +45,12 @@
                                 @endforeach
                                 </tbody>
                                <thead class="thead-light">
-                                <th>Quantity</th>
-                                <th>precio</th>
-                                <th>taxPercent</th>
-                                <th>equivalencePercent</th>
-                                <th>tax</th>
-                                <th>equivalence</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>TaxPercent</th>
+                                <th>EquivalencePercent</th>
+                                <th>Tax</th>
+                                <th>Equivalence</th>
                                 <th>Subtotal</th>
                                 <th>Total</th>
                                </thead>
@@ -73,6 +76,35 @@
 
                 </div>
             </div>
+            <footer>
+                <form method="POST" action="{{ route('pedidos.update',$code) }}"  role="form">
+
+                    {{ csrf_field() }}
+
+                    <input name="_method" type="hidden" value="PATCH">
+
+                    <div class="form-group">
+                        <select name="name" class="form-control" id="name"  placeholder="Estado">
+                            <option selected>Estado...</option>
+
+                                <option value="En proceso" >En proceso</option>
+                                <option value="Terminado" >Terminado</option>
+
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+
+                            <input type="submit"  value="Actualizar" class="btn btn-success btn-block">
+
+                            <a href="{{ route('pedidos.index') }}" class="btn btn-info btn-block" >Atrás</a>
+
+                        </div>
+                    </div>
+                </form>
+
+            </footer>
 
         </div>
         </div>

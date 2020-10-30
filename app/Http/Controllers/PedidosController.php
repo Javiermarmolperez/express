@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Pedidos;
 use App\Models\Tienda;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use function MongoDB\BSON\toJSON;
 
 class PedidosController extends Controller
 {
@@ -18,20 +20,17 @@ class PedidosController extends Controller
             //$id = $pedido->tienda_id;
 
             $status = $pedido->status;
-            $nameStatus = explode('"',$status);
-            $name = $nameStatus[5];
 
             $allProducts = $pedido->orderProducts;
             $item = json_decode($allProducts);
 
-            array_push($arrayPedidos,[$name,$item]);
+            array_push($arrayPedidos,[$status,$item]);
+
         }
 
 
 
-
-
-        return view('pedidos.index',compact('pedidos','name','item'));
+        return view('pedidos.index',compact('pedidos','arrayPedidos'));
     }
 
     public function show($id)
@@ -39,6 +38,7 @@ class PedidosController extends Controller
 
             $pedidos=Pedidos::find($id);
             $allOrdersProducts = json_decode($pedidos->orderProducts);
+            $code = json_decode($pedidos->code);
 
             $arrayProducts = [];
 
@@ -58,7 +58,25 @@ class PedidosController extends Controller
 
 
 
-        return view('pedidos.pdf',compact('allOrdersProducts','arrayProducts','product','item','measure'));
+        return view('pedidos.details',compact('allOrdersProducts','arrayProducts','code','product','item','measure'));
+
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        $status = $this->validate($request,['name'=>'required']);
+        $json = $status['name'];
+
+        $shark = Pedidos::find($id);
+        $shark->status = $json;
+        $shark->save();
+        //dd($shark->status);
+
+        //DB::table('pedidos')->where('status')->update($status);
+
+
+        return redirect()->route('pedidos.index')->with('success','Registro actualizado satisfactoriamente');
 
     }
 }

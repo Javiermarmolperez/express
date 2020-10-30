@@ -24,14 +24,14 @@
                             <th></th>
                             <th></th>
                             <th>Tienda</th>
-                            <th>Code</th>
-                            <th>OrderDate</th>
-                            <th>Observations</th>
+                            <th>Código</th>
+                            <th>Fecha pedido</th>
+                            <th>Observaciones</th>
                             <th>fromApp</th>
-                            <th>deliveryPointId</th>
+                            <th>ID punto de envío</th>
                             <th>Dirección</th>
                             <th>Teléfono</th>
-                            <th>statusOrderId</th>
+                            <th>Estado del pedido</th>
                             <th>Ver</th>
 
 
@@ -51,7 +51,7 @@
                             <td>{{$pedido->deliveryPointId}}</td>
                             <td>{{$pedido->address}}</td>
                             <td>{{$pedido->phoneNumber}}</td>
-                            <td>{{$name}}</td>
+                            <td>{{$pedido->status}}</td>
                             <td><a href="/pedidos/{{$pedido->code}}" class="btn-descargar" target="_blank"><i class="fas fa-download"></i><span class="glyphicon glyphicon-eye-open"></span></a></td>
 
 
