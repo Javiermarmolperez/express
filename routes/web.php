@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FtpController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\TiendaController;
 use App\Http\Controllers\UsersController;
@@ -24,7 +25,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboardAdmin.dashboard');
@@ -42,14 +43,7 @@ Route::get('/ftp', function () {
     return view('ftp.index');
 });
 
-
-
-
-
-
 Route::get('pedidos/{id}', [PedidosController::class, 'show']);
-
-
 
 Route::resource('/tiendas',TiendaController::class);
 Route::resource('/users',UsersController::class);

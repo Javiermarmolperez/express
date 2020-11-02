@@ -19,10 +19,10 @@ class CreatePedidosTable extends Migration
             $table->string('statusOrderId');
             $table->string('name');
             $table->string('address');
-            $table->string('phoneNumber');
-            $table->json('orderProducts');
+            $table->string('phoneNumber')->nullable();
+            $table->json('orderProducts')->nullable();
 
-            $table->string('status');
+            $table->string('status')->nullable();
 
 
             $table->unsignedBigInteger('tienda_id')->nullable();

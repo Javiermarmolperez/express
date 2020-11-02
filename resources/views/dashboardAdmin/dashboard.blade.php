@@ -37,14 +37,14 @@
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading"></div>
 
-                            <a class="nav-link" href="/tiendas">
+                            <!--<a class="nav-link" href="/tiendas">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tiendas
                             </a>
-                            <a class="nav-link" href="/users">
+                        <a class="nav-link" href="/users">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Usuarios
-                            </a>
+                            </a>--->
                             <a class="nav-link" href="/pedidos">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Lista de pedidos

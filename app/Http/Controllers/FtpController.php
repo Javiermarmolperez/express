@@ -40,6 +40,7 @@ class FtpController extends Controller
     {
         foreach ($arrayOrder as $order)
         {
+
             $id = $order->id;
             $code = $order->code;
             $orderDate = $order->orderDate;
@@ -55,9 +56,9 @@ class FtpController extends Controller
 
             $readtable = DB::table('pedidos')->select('id')->where('id','=',$id)->get();
             $toArray = $readtable->pluck('id');
-            $key = $toArray->all();
+            $key = $toArray->get(0);
 
-            if ($key[0] !== $id)
+            if ($key !== $id)
                 {
                     DB::table('pedidos')->insert([
                         'id'=>$id,

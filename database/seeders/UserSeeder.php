@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::factory()
-            ->times(5)
+            ->times(1)
             ->create()->each(function ($user) {
                 // Seed the relation with one name
                 $name = Tienda::factory()->make();
