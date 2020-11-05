@@ -18,9 +18,10 @@ class FtpController extends Controller
         if(!$arrayAllOrders) {
             return \response('please provide valid path', 400);
         }
+
         //recorre el array de links y devuelve los links individualmente por string
          $this->show($arrayAllOrders);
-        return view('ftp.index',compact('arrayAllOrders'));
+        return redirect()->route('pedidos.index')->with('success','Registro actualizado satisfactoriamente');
 
     }
 

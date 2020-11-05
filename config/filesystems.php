@@ -46,9 +46,9 @@ return [
             'driver' => 'sftp',
             'host' => 'core.optimroute.com',
             'port' => 2222,
-            'username' => 'optimroute_company_36',
-            'password' => '8BUPsJC3',
-            'root' => 'company_36',
+            'username' => 'optimroute_company_82',
+            'password' => 'zYnWoitJ',
+            'root' => 'company_82',
             ],
         'local' => [
             'driver' => 'local',

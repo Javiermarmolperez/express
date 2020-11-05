@@ -15,7 +15,9 @@
                 <div class="card-header">
                     <i class="fas fa-table mr-1"></i>
                     Detalle pedido
+                    <a style="padding-left: 150px" href="/pedidos">Volver</a>
                 </div>
+
                 <div>
 
                 </div>
@@ -26,8 +28,7 @@
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead class="thead-dark">
-                                <th>Id</th>
-                                <th>Código</th>
+
                                 <th>Producto</th>
                                 <th>Peso</th>
 
@@ -36,15 +37,14 @@
                                 @foreach($arrayProducts as $product)
                                     <tr>
 
-                                        <td>{{$product[0]->id}}</td>
-                                        <td>{{$product[0]->code}}</td>
+
                                         <td>{{$product[0]->name}}</td>
                                         <td>{{$product[1]->id}}{{$product[1]->name}}</td>
 
                                     </tr>
                                 @endforeach
                                 </tbody>
-                               <thead class="thead-light">
+                               <!--<thead class="thead-light">
                                 <th>Cantidad</th>
                                 <th>Precio</th>
                                 <th>TaxPercent</th>
@@ -65,7 +65,7 @@
                                 <td>{{$pedido->equivalence}}</td>
                                 <td>{{$pedido->subTotal}}</td>
                                 <td>{{$pedido->total}}</td>
-                            </tbody>
+                            </tbody>--->
 
                             </table>
                         </div>
@@ -87,7 +87,7 @@
                         <select name="name" class="form-control" id="name"  placeholder="Estado">
                             <option selected>Estado...</option>
 
-                                <option value="En proceso" >En proceso</option>
+                                <!--<option value="En proceso" >En proceso</option>-->
                                 <option value="Terminado" >Terminado</option>
 
                         </select>

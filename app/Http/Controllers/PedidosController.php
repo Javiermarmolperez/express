@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pedidos;
-use App\Models\Tienda;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use function MongoDB\BSON\toJSON;
 
 class PedidosController extends Controller
 {

@@ -39,11 +39,8 @@ Route::get('/pedidos', function () {
 Route::get('/users', function () {
     return view('users.index');
 });
-Route::get('/ftp', function () {
-    return view('ftp.index');
-});
 
-Route::get('pedidos/{id}', [PedidosController::class, 'show']);
+//Route::get('pedidos/{id}', [PedidosController::class, 'show']);
 
 Route::resource('/tiendas',TiendaController::class);
 Route::resource('/users',UsersController::class);
