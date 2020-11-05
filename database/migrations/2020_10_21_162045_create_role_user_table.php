@@ -8,7 +8,7 @@ class CreateRoleUserTable extends Migration
 {
     public function up()
     {
-        Schema::create('role_user', function (Blueprint $table) {
+       /*Schema::create('role_user', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('role_id');
             $table->unsignedBigInteger('user_id');
@@ -21,11 +21,11 @@ class CreateRoleUserTable extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-        });
+        });*/
     }
 
     public function down()
     {
-        Schema::dropIfExists('role_user');
+       // Schema::dropIfExists('role_user');
     }
 }

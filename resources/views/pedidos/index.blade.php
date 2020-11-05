@@ -25,7 +25,7 @@
 
                             <th>Cliente</th>
                             <!--<th>Código</th>--->
-                            <th>Fecha pedido</th>
+                            <!--<th>Fecha pedido</th>-->
                             <th>Observaciones</th>
                             <!--<th>fromApp</th>--->
                             <!--<th>ID punto de envío</th>--->
@@ -47,7 +47,7 @@
 
                                     <td>{{$pedido->name}}</td>
                                     <!--<td>{{$pedido->code}}</td>--->
-                                    <td>{{$pedido->orderDate}}</td>
+                                    <!--<td>{{$pedido->orderDate}}</td>-->
                                     <td>{{$pedido->observations}}</td>
                                     <!--<td>{{$pedido->fromApp}}</td>--->
                                     <!--<td>{{$pedido->deliveryPointId}}</td>--->

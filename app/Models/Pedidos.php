@@ -10,8 +10,8 @@ class Pedidos extends Model
     use HasFactory;
     protected $fillable = ['code', 'orderDate'];
 
-    protected function tiendas()
+    /*protected function tiendas()
     {
         return $this->belongsTo(Tienda::class);
-    }
+    }*/
 }

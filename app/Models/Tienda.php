@@ -10,7 +10,7 @@ class Tienda extends Model
     use HasFactory;
     protected $fillable = ['name'];
 
-    public function pedidos()
+    /*public function pedidos()
     {
         return $this->hasMany(Pedidos::class);
     }
@@ -18,6 +18,6 @@ class Tienda extends Model
     protected function user()
     {
         return $this->belongsTo(User::class);
-    }
+    }*/
 
 }

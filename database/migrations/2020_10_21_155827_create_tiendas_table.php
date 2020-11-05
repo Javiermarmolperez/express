@@ -8,7 +8,7 @@ class CreateTiendasTable extends Migration
 {
     public function up()
     {
-        Schema::create('tiendas', function (Blueprint $table) {
+       /* Schema::create('tiendas', function (Blueprint $table) {
 
             $table->id();
             $table->string('name')->nullable();
@@ -17,14 +17,14 @@ class CreateTiendasTable extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            /*$table->integer('pedido_id');*/
+            $table->integer('pedido_id');
             $table->timestamps();
-        });
+        });*/
     }
 
 
     public function down()
     {
-        Schema::dropIfExists('tiendas');
+        //Schema::dropIfExists('tiendas');
     }
 }

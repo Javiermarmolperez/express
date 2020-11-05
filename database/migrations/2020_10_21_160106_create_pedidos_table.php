@@ -25,11 +25,11 @@ class CreatePedidosTable extends Migration
             $table->string('status')->nullable();
 
 
-            $table->unsignedBigInteger('tienda_id')->nullable();
+            /*$table->unsignedBigInteger('tienda_id')->nullable();
             $table->foreign('tienda_id')
                 ->references('id')
                 ->on('tiendas')
-                ->onDelete('cascade');
+                ->onDelete('cascade');*/
 
             $table->timestamps();
 

@@ -44,28 +44,28 @@
                                     </tr>
                                 @endforeach
                                 </tbody>
-                               <!--<thead class="thead-light">
+                               <!--<thead class="thead-light">-->
                                 <th>Cantidad</th>
                                 <th>Precio</th>
-                                <th>TaxPercent</th>
+                            <!--<th>TaxPercent</th>
                                 <th>EquivalencePercent</th>
                                 <th>Tax</th>
                                 <th>Equivalence</th>
                                 <th>Subtotal</th>
-                                <th>Total</th>
+                                <th>Total</th>-->
                                </thead>
                             <tbody>
 
 
                                 <td>{{$pedido->quantity}}</td>
                                 <td>{{$pedido->price}}</td>
-                                <td>{{$pedido->taxPercent}}</td>
+                                <!--<td>{{$pedido->taxPercent}}</td>
                                 <td>{{$pedido->equivalencePercent}}</td>
                                 <td>{{$pedido->tax}}</td>
                                 <td>{{$pedido->equivalence}}</td>
                                 <td>{{$pedido->subTotal}}</td>
-                                <td>{{$pedido->total}}</td>
-                            </tbody>--->
+                                <td>{{$pedido->total}}</td>--->
+                            </tbody>
 
                             </table>
                         </div>

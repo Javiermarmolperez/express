@@ -13,11 +13,11 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'user',
+            'name' => 'admin',
             'email' => 'lucyarce722@gmail.com',
             'email_verified_at' => now(),
             'password' => 'Dylan123', // password
-            'remember_token' => Str::random(10),
+            //'remember_token' => Str::random(10),
         ];
     }
 }
