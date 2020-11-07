@@ -22,17 +22,13 @@
 
                             <thead>
 
-
+                            <th>Ver</th>
                             <th>Cliente</th>
-                            <!--<th>Código</th>--->
-                            <!--<th>Fecha pedido</th>-->
                             <th>Observaciones</th>
-                            <!--<th>fromApp</th>--->
-                            <!--<th>ID punto de envío</th>--->
                             <th>Dirección</th>
                             <th>Teléfono</th>
                             <th>Estado del pedido</th>
-                            <th>Ver</th>
+
 
 
 
@@ -44,17 +40,12 @@
                             @foreach($pedidos as $pedido)
                                 @if ($pedido->name != 'ejemplo' AND $pedido->status != 'Terminado')
 
-
+                                    <td><a href="/pedidos/{{$pedido->code}}" target="_self" class="btn-descargar" ><i class="fas fa-download"></i><span class="glyphicon glyphicon-eye-open"></span></a></td>
                                     <td>{{$pedido->name}}</td>
-                                    <!--<td>{{$pedido->code}}</td>--->
-                                    <!--<td>{{$pedido->orderDate}}</td>-->
                                     <td>{{$pedido->observations}}</td>
-                                    <!--<td>{{$pedido->fromApp}}</td>--->
-                                    <!--<td>{{$pedido->deliveryPointId}}</td>--->
                                     <td>{{$pedido->address}}</td>
                                     <td>{{$pedido->phoneNumber}}</td>
                                     <td>{{$pedido->status}}</td>
-                                    <td><a href="/pedidos/{{$pedido->code}}" target="_self" class="btn-descargar" ><i class="fas fa-download"></i><span class="glyphicon glyphicon-eye-open"></span></a></td>
 
 
                                 @endif

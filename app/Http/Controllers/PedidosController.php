@@ -37,25 +37,21 @@ class PedidosController extends Controller
             $allOrdersProducts = json_decode($pedidos->orderProducts);
             $code = json_decode($pedidos->code);
 
+
             $arrayProducts = [];
 
-            foreach ($allOrdersProducts as $ordersProduct)
+            foreach ($allOrdersProducts as $pedido)
             {
-                $producto = $ordersProduct->product;
-                $medida = $ordersProduct->measure;
+                $quantity = $pedido->quantity;
+                $producto = $pedido->product;
+                $medida = $pedido->measure;
 
-                array_push($arrayProducts,[$producto,$medida]);
-            }
-
-            foreach ($arrayProducts as $product)
-            {
-                $item = $product[0];
-                $measure = $product[1];
+                array_push($arrayProducts,[$producto,$medida,$quantity]);
             }
 
 
 
-        return view('pedidos.details',compact('allOrdersProducts','arrayProducts','code','product','item','measure'));
+        return view('pedidos.details',compact('pedido','arrayProducts','code'));
 
     }
 
