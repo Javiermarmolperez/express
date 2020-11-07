@@ -29,7 +29,6 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead class="thead-dark">
                                 <th>OK</th>
-                                <th>Cantidad</th>
                                 <th>Producto</th>
                                 <th>Peso</th>
 
@@ -38,9 +37,8 @@
                                 @foreach($arrayProducts as $product)
                                     <tr>
                                         <td><input type="checkbox"></td>
-                                        <td>{{$product[2]}}</td>
                                         <td>{{$product[0]->name}}</td>
-                                        <td>{{$product[1]->id}}{{$product[1]->name}}</td>
+                                        <td>{{$product[2]}}{{$product[1]->name}}</td>
 
                                     </tr>
                                 @endforeach
