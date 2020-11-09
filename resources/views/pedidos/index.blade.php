@@ -44,7 +44,7 @@
                                     <td>{{$pedido->name}}</td>
                                     <td>{{$pedido->observations}}</td>
                                     <td>{{$pedido->address}}</td>
-                                    <td>{{$pedido->phoneNumber}}</td>
+                                    <td>{{substr($pedido->phoneNumber,-9)}}</td>
                                     <td>{{$pedido->status}}</td>
 
 

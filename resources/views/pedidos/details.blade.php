@@ -69,9 +69,9 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
 
-                            <input type="submit"  value="Actualizar" class="btn btn-success btn-block">
+                            <input type="submit"  value="Actualizar" class="btn-lg btn-success btn-block">
 
-                            <a href="{{ route('pedidos.index') }}" class="btn btn-info btn-block" >Atrás</a>
+                            <a href="{{ route('pedidos.index') }}" style="text-align: center" class="btn-lg btn-info btn-block" >Atrás</a>
 
                         </div>
                     </div>
