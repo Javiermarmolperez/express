@@ -9,7 +9,7 @@
                 <script type="text/javascript">
                     function changeColor(x)
                     {
-                        if(x.style.background=="black")
+                        if(x.style.background=="#000000")
                         {
                             x.style.background="#fff";
                         }else{
