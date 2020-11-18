@@ -58,12 +58,13 @@ class PedidosController extends Controller
     public function update(Request $request, $id)
     {
 
-        $status = $this->validate($request,['name'=>'required']);
+        /*$status = $this->validate($request,['name'=>'required']);
         $json = $status['name'];
+        dd($json);*/
 
-        $shark = Pedidos::find($id);
-        $shark->status = $json;
-        $shark->save();
+        $pedido = Pedidos::find($id);
+        $pedido->status = "Terminado";
+        $pedido->save();
         //dd($shark->status);
 
         //DB::table('pedidos')->where('status')->update($status);

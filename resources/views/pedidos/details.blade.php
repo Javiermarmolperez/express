@@ -5,18 +5,31 @@
 <section>
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">Detalle pedido</h1>
-
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="/dashboard">Panel</a></li>
-                <li class="breadcrumb-item active">Pedidos</li>
-            </ol>
             <div class="card mb-4">
-                <div class="card-header">
-                    <i class="fas fa-table mr-1"></i>
-                    Detalle pedido
-                    <a style="padding-left: 150px" href="/pedidos">Volver</a>
-                </div>
+                <style>
+                    .btn-success {
+                        color:black;
+                        background-color: white;
+                        border-color: #4cae4c;
+                    }
+
+                    .btn-success:hover {
+                        color: black;
+                        background-color: #449d44;
+                        border-color: #398439;
+                    }
+
+                    .btn-success:active:hover {
+                        color: #fff;
+                        background-color: #398439;
+                        border-color: #255625;
+                    }
+                    .btn-success:visited {
+                        color: #fff;
+                        background-color: #398439;
+                        border-color: #255625;
+                    }
+                </style>
 
                 <div>
 
@@ -28,7 +41,7 @@
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead class="thead-dark">
-                                <th>OK</th>
+
                                 <th>Producto</th>
                                 <th>Peso</th>
 
@@ -36,8 +49,8 @@
                                 <tbody>
                                 @foreach($arrayProducts as $product)
                                     <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>{{$product[0]->name}}</td>
+
+                                        <td class="btn-success">{{$product[0]->name}}</td>
                                         <td>{{$product[2]}}{{$product[1]->name}}</td>
 
                                     </tr>
@@ -56,20 +69,10 @@
 
                     <input name="_method" type="hidden" value="PATCH">
 
-                    <div class="form-group">
-                        <select name="name" class="form-control" id="name"  placeholder="Estado">
-                            <option selected>Estado...</option>
-
-                                <!--<option value="En proceso" >En proceso</option>-->
-                                <option value="Terminado" >Terminado</option>
-
-                        </select>
-                    </div>
-
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
 
-                            <input type="submit"  value="Actualizar" class="btn-lg btn-success btn-block">
+                            <input type="submit"  value="Actualizar" class="btn-lg btn-danger btn-block">
 
                             <a href="{{ route('pedidos.index') }}" style="text-align: center" class="btn-lg btn-info btn-block" >Atrás</a>
 

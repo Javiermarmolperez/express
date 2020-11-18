@@ -48,6 +48,7 @@
                 font-size: 84px;
             }
 
+
             .links > a {
                 color: #fff;
                 padding: 0 25px;

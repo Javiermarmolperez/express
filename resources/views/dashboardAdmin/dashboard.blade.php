@@ -13,7 +13,7 @@
 
     </head>
     <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+       <!-- <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="/dashboard">{{ Auth::user()->name }} </a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
 
@@ -29,7 +29,7 @@
                     </div>
                 </li>
             </ul>
-        </nav>
+        </nav>-->
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -44,15 +44,12 @@
                         <a class="nav-link" href="/users">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Usuarios
-                            </a>--->
+                            </a>
                             <a class="nav-link" href="/pedidos">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Lista de pedidos
-                            </a>
-                            <a class="nav-link" href="/ftp">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Actualizar pedidos
-                            </a>
+                            </a>--->
+
                         </div>
                     </div>
                 </nav>
