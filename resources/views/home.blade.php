@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                        <a class="nav-link" href="/dashboard">
+                        <a class="nav-link" href="/pedidos">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Panel de control
                         </a>

@@ -6,6 +6,18 @@
     <main>
         <div class="container-fluid">
             <div class="card mb-4">
+                <script type="text/javascript">
+                    function changeColor(x)
+                    {
+                        if(x.style.background=="black")
+                        {
+                            x.style.background="#fff";
+                        }else{
+                            x.style.background="#449d44";
+                        }
+                        return false;
+                    }
+                </script>
                 <style>
                     .btn-success {
                         color:black;
@@ -26,7 +38,7 @@
                     }
                     .btn-success:visited {
                         color: #fff;
-                        background-color: #398439;
+                        background-color: red;
                         border-color: #255625;
                     }
                 </style>
@@ -50,7 +62,7 @@
                                 @foreach($arrayProducts as $product)
                                     <tr>
 
-                                        <td class="btn-success">{{$product[0]->name}}</td>
+                                        <td  onclick = "changeColor(this);" id="mb" class="btn-success">{{$product[0]->name}}</td>
                                         <td>{{$product[2]}}{{$product[1]->name}}</td>
 
                                     </tr>
@@ -72,7 +84,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
 
-                            <input type="submit"  value="Actualizar" class="btn-lg btn-danger btn-block">
+                            <input type="submit"  value="Terminado" class="btn-lg btn-danger btn-block">
 
                             <a href="{{ route('pedidos.index') }}" style="text-align: center" class="btn-lg btn-info btn-block" >Atrás</a>
 

@@ -75,7 +75,7 @@
             <div class="links">
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/dashboard') }}">Tablero</a>
+                        <a href="{{ url('/pedidos') }}">Tablero</a>
                     @else
                         <a href="{{ route('login') }}">Iniciar sesión</a>
 

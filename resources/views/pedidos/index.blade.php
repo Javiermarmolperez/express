@@ -5,7 +5,7 @@
 <section>
     <main>
         <div class="container-fluid">
-            <a type="button" class="btn-lg btn-success btn-block" href="/ftp">
+            <a style="margin-bottom: 20px" type="button" class="btn-lg btn-success btn-block" href="/ftp">
                 Actualizar pedidos
             </a>
             @foreach($pedidos as $pedido)
